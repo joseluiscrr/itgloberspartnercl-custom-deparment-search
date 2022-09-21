@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles.css";
 
 type Props = {
   departments: [Category],
@@ -9,12 +10,13 @@ type Category = {
   id: string,
   name: string,
   slug: string
-}
+};
 
 const DepartmentGroup = ({ departments, handleSetSlug }: Props) => {
   console.log("Mi grupo de departamento es:", departments);
+
   const onHandleSetSlug = (event: any) => {
-    return handleSetSlug(`${event.target.value}/$\{term\}&map=ft`)
+    return handleSetSlug(`${event.target.value}/$\{term\}&map=ft`);
   };
 
   const departmentOptions: any = departments.map((department: Category) => {
@@ -26,7 +28,7 @@ const DepartmentGroup = ({ departments, handleSetSlug }: Props) => {
   });
 
   return (
-    <select defaultValue="value0" onChange={onHandleSetSlug}>
+    <select defaultValue="value0" onChange={onHandleSetSlug} className={`${styles.department__select}`}>
       <option value="value0">Selecciona una opción</option>
       {departmentOptions}
     </select>
