@@ -1,25 +1,30 @@
 import React from "react";
 import styles from "./styles.css";
 
-type Props = {
-  departments: [Category],
-  handleSetSlug: any
-};
-
 type Category = {
   id: string,
   name: string,
   slug: string
 };
 
+type Props = {
+  departments: [Category],
+  handleSetSlug: any
+};
+
+/**
+ * Este componente sirve para pintar y manejar un select de departamentos
+ * @param departments departamentos con los que cuenta nuestra tienda VTEX
+ * @param handleSetSlug hook useState
+ * @returns un select con sus opciones de departamento
+ */
+
+/** */
 const DepartmentGroup = ({ departments, handleSetSlug }: Props) => {
-  console.log("Mi grupo de departamento es:", departments);
 
-  const onHandleSetSlug = (event: any) => {
-    return handleSetSlug(`${event.target.value}?_q=${event.target.value}&map=ft`);
-  };
+  const onHandleSetSlug = (event: any) => handleSetSlug(`${event.target.value}?_q=${event.target.value}&map=ft`); // Valor del select que será buscado en la url
 
-  const departmentOptions: any = departments.map((department: Category) => {
+  const departmentOptions: any = departments.map((department: Category) => {                                      // Me imprime una option con cada departamento
     return (
       <option value={department.slug} key={department.id}>
         {department.name}
