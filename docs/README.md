@@ -92,7 +92,7 @@ para que se instalen todas las dependencias necesarias
 
 ### Paso 7 - Crear componente
 
-En la carpeta de react se debe crear el archivo con el que se va a trabajar, en este caso : `BulletGroup.tsx`, luego crear su carpeta de componentes y empezar a desarrollar
+En la carpeta de react se debe crear el archivo con el que se va a trabajar, en este caso : `DepartmentSearch.tsx`, luego crear su carpeta de componentes y empezar a desarrollar
 
 ### Paso 8 - Ejecute un preview de la tienda
 
